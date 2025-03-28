@@ -31,7 +31,7 @@ class Paths
 
 	inline static public function script(key:String, ?library:String):String
 	{
-		return getPath('assets/$folder/$file.hx', TEXT, library);
+		return getPath('$key.hx', TEXT, library);
 	}
 
 	public static function excludeAsset(key:String) {
