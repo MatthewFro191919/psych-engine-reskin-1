@@ -3419,10 +3419,9 @@ class PlayState extends MusicBeatState
 	#end
 
 	inline function addCharScript(char:Character) {
-		var script:HScript = cast(Paths.scripts('characters/' + char.curCharacter) + char.type);
+		var script:HScript = cast(Paths.script('characters/' + char.curCharacter) + char.type);
 		if (script != null) {
-			char.script = script;
-			script.set('ScriptChar', char);
+		        script.set('ScriptChar', char);
 			script.safeCall('createChar', [char]);
 		}
 	}
