@@ -8,22 +8,6 @@ import lime.utils.Assets as LimeAssets;
 #end
 class CoolUtil
 {
-	inline public static function coolTextFile(path:String):Array<String> {
-		return [for (i in getFileContent(path).trim().split('\n')) i.trim()];
-	}
-
-	inline public static function getFileContent(path:String):String {
-		#if desktop
-		if (FileSystem.exists(path))
-			return File.getContent(path);
-		#else
-		if (OpenFlAssets.exists(path, TEXT))
-			return Assets.getText(path);
-		#end
-
-		return "";
-	}
-
 	public static function checkForUpdates(url:String = null):String {
 		if (url == null || url.length == 0)
 			url = "https://raw.githubusercontent.com/MobilePorting/FNF-PsychEngine-Mobile/main/gitVersion.txt";
