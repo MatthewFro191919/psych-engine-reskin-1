@@ -29,6 +29,11 @@ class Paths
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	inline public static var VIDEO_EXT = "mp4";
 
+	inline static public function script(key:String, ?library:String):String
+	{
+		return getPath('assets/shared/$folder/$file.hx', TEXT, library);
+	}
+
 	public static function excludeAsset(key:String) {
 		if (!dumpExclusions.contains(key))
 			dumpExclusions.push(key);
