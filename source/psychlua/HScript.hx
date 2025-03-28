@@ -81,6 +81,17 @@ class HScript extends Iris
 	}
 	#end
 
+	public function safeCall(method:String, args:Array<Dynamic>):Dynamic
+	{
+		try {
+			return call(method, args);
+		}
+		catch(e) {
+			errorPrint(e);
+			return CONTINUE_FUNCTION;
+		}
+	}
+
 	public var origin:String;
 	override public function new(?parent:Dynamic, ?file:String, ?varsToBring:Any = null, ?manualRun:Bool = false)
 	{
