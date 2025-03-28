@@ -3418,7 +3418,7 @@ class PlayState extends MusicBeatState
 	}
 	#end
 
-	inline function addCharScript(char:Character) {
+	inline function addCharScript(char:Character, name:String) {
 		var scriptFile:String = 'characters/' + name + '.hx';
 		if (scriptFile != null) {
 		        scriptFile.set('ScriptChar', char);
