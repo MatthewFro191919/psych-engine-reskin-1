@@ -86,10 +86,6 @@ class HScript extends Iris
 		try {
 			return call(method, args);
 		}
-		catch(e) {
-			errorPrint(e);
-			return CONTINUE_FUNCTION;
-		}
 	}
 
 	public var origin:String;
